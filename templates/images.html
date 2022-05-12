@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking</title>
+    <style>
+        body {margin:25px;}
+        
+        div.polaroid {
+          width: 30%;
+          height: 50%;
+          display: inline-block;
+          background-color: white;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          margin-bottom: 25px;
+        }
+        
+        div.container {
+          text-align: center;
+          padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    {% if person %}
+    <div class="polaroid">
+        <h1>Original Image</h1>
+        <img src="{{url_for('static', filename=person)}}" alt="5 Terre" style="width:50% ; height:50%">
+        <div class="container">
+        <p>
+            <h2>Image Name : {{person}}</h2>
+            <h2></h2>
+        </p>
+        </div>
+    </div>
+    {% endif %}
+    {% if person %}
+    <div class="polaroid">
+        <h1>Output Image</h1>
+        <img src="{{url_for('static', filename=person)}}" alt="5 Terre" style="width:50% ; height:50%">
+        <div class="container">
+        <p>
+            <h2>Image Name : {{person}}</h2>
+            <h2>Percentage : {{matches}}</h2>
+        </p>
+        </div>
+    </div>
+    {% endif %}
+    </center>
+</body>
+</html>
